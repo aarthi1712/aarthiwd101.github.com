@@ -51,7 +51,7 @@ const displayEntries = () => {
     })
     .join("\n");
 
-  let tableDiv = document.getElementById("entrytbale");
+  let tableDiv = document.getElementById("entrytable");
 
   tableDiv.innerHTML = `<table>
   <tr>
