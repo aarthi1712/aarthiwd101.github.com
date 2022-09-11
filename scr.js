@@ -65,7 +65,7 @@ const displayEntries = () => {
   </table>`;
 };
 
-// const saveUserFrom = () => {
+
 const saveUserFrom = (event) => {
   event.preventDefault();
 
