@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="w.css" />
 <title>Final Task</title>
 </head>
 <body>
@@ -46,12 +46,12 @@
 </form>
 <h1>Entries</h1>
  <div id="entrytable"></div>
-    <script src="scr.js">
+    <script src="w.js">
               const email1 = document.getElementById('email');
             email1.addEventListener('input',()=>validate(email1));
             function validate(element){
                 if(element.validity.typeMismatch){
-                    element.setCustomValidity("this email not in perfect format...");
+                    element.setCustomValidity("this email not in perfect format!!!");
                     element.reportValidity();
           }
                 else{
