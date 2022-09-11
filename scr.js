@@ -1,23 +1,23 @@
-function validateAge(today, dobobj) {
-  var age = today.getFullYear() - dobobj.getFullYear();
-  var m = today.getMonth() - dobobj.getMonth();
-  if (m < 0 || (m === 0 && today.getDate() < dobobj.getDate())) {
+function validateAge(today, dobj) {
+  var age = today.getFullYear() - dobj.getFullYear();
+  var mon = today.getMonth() - dobj.getMonth();
+  if (mon < 0 || (mon === 0 && today.getDate() < dobj.getDate())) {
     age--;
   }
   return age;
 }
-let dobelement = document.getElementById("dob");
-dobelement.addEventListener("change", () => {
-  let [y,m,d] = document.getElementById("dob").value.split("-");
-  let dob = new Date(y,m,d);
+let delement = document.getElementById("dob");
+delement.addEventListener("change", () => {
+  let [yy,mm,dd] = document.getElementById("dob").value.split("-");
+  let dob = new Date(yy,mm,dd);
   let Today = new Date();
   age = validateAge(Today, dob);
   if (age < 18 || age > 55) {
-    dobelement.setCustomValidity("Age must lie in 18 and 55 year`s only..");
+    delement.setCustomValidity("Age must lie in 18 and 55 year`s only");
  
     return;
   } else {
-    dobelement.setCustomValidity("");
+    delement.setCustomValidity("");
   }
 });
 let form = document.getElementById("user-form");
@@ -65,7 +65,7 @@ const displayEntries = () => {
   </table>`;
 };
 
-// const saveUserFrom = () => {
+
 const saveUserFrom = (event) => {
   event.preventDefault();
 
