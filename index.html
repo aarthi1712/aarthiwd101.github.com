@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="w.css" />
+<title>Final Task</title>
+</head>
+<body>
+<form id="user-form">
+<h1>Registration Form</h1>
+<div>
+  <label for="name">Name : </label>
+  <input name="name" placeholder="Enter Full name" id="name" type="text" required />
+</div>
+<div>
+  <label for="email">Email : </label>
+  <input name="email" placeholder="Enter email" id="email" type="email" required />
+</div>
+<div>
+ <label for="password">Password : </label>
+ <input required type="password" placeholder="Enter password" name="password" id="password" />
+</div>
+<div>
+<label for="dob">DOB : </label>
+          <input required
+            type="date"
+            name="dob"
+            id="dob"
+            min="1967-09-04"
+            max="2004-09-04"
+          />
+</div>
+<div>
+ <input
+            style="width: 40px"
+            type="checkbox"
+            name="acceptTerms"
+            id="acceptTerms"
+          />
+<label for="acceptTerms">Accept terms & Conditions</label>
+</div>
+<div>
+<button>submit</button>
+</div>
+</form>
+<h1>Entries</h1>
+ <div id="entrytbale"></div>
+    <script src="w.js">
+              const email1 = document.getElementById('email');
+            email1.addEventListener('input',()=>validate(email1));
+            function validate(element){
+                if(element.validity.typeMismatch){
+                    element.setCustomValidity("this email not in perfect format...");
+                    element.reportValidity();
+          }
+                else{
+                    element.setCustomValidity("");
+          }
+      }
+    </script>
+</body>
+</html>
+
+
