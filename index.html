@@ -1,65 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-<title>Final Task</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Registration Form</title>
 </head>
+
 <body>
-<form id="user-form">
-<h1>Registration Form</h1>
-<div>
-  <label for="name">Name : </label>
-  <input name="name" placeholder="Enter Full name" id="name" type="text" required />
-</div>
-<div>
-  <label for="email">Email : </label>
-  <input name="email" placeholder="Enter email" id="email" type="email" required />
-</div>
-<div>
- <label for="password">Password : </label>
- <input required type="password" placeholder="Enter password" name="password" id="password" />
-</div>
-<div>
-<label for="dob">DOB : </label>
-          <input required
-            type="date"
-            name="dob"
-            id="dob"
-            min="1967-09-04"
-            max="2004-09-04"
-          />
-</div>
-<div>
- <input
-            style="width: 40px"
-            type="checkbox"
-            name="acceptTerms"
-            id="acceptTerms"
-          />
-<label for="acceptTerms">Accept terms & Conditions</label>
-</div>
-<div>
-<button>submit</button>
-</div>
-</form>
-<h1>Entries</h1>
- <div id="entrytable"></div>
-    <script src="scr.js">
-              const email1 = document.getElementById('email');
-            email1.addEventListener('input',()=>validate(email1));
-            function validate(element){
-                if(element.validity.typeMismatch){
-                    element.setCustomValidity("this email not in perfect format!!!");
-                    element.reportValidity();
-          }
-                else{
-                    element.setCustomValidity("");
-          }
-      }
-    </script>
+    <div class="relative flex min-h-screen flex-col justify-center overflow-hidden py-6 bg-gray-50">
+        <div
+            class="relative bg-white px-6 pt-5 pb-5 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
+            <div class="mx-auto max-w-md">
+                <h2 class="text-3xl text-center font-bold leading-tight">
+                    Registration Form
+                </h2>
+                <div class="divide-y divide-gray-300/50">
+                    <div class="space-y-6 py-8 text-base leading-7 text-gray-600">
+                        <form id="user_form">
+                            <label for="name" class="text-md w-40 inline-block font-medium leading-5 text-gray-700">
+                                Name
+                            </label>
+                            <input required type="text" id="name" name="name" class="bg-gray-100 inline-block rounded-lg shadow-md px-4 py-3 mb-5 text-base leading-6 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 transition duration-150 ease-in-out invalid:border-pink-500 invalid:text-pink-600
+                            focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+                                placeholder="Enter full name"></br>
+
+                            <label for="email" class="text-md w-40 inline-block font-medium leading-5 text-gray-700">
+                                Email
+                            </label>
+                            <input required type="email" id="email" name="email" class="bg-gray-100 inline-block rounded-lg shadow-md px-4 py-3 mb-5 text-base leading-6 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 transition duration-150 ease-in-out invalid:border-pink-500 invalid:text-pink-600
+                            focus:invalid:border-pink-500 focus:invalid:ring-pink-500" placeholder="Enter email"></br>
+
+                            <label for="password" class="text-md w-40 inline-block font-medium leading-5 text-gray-700">
+                                Password
+                            </label>
+                            <input required type="password" id="password" name="password" class="bg-gray-100 inline-block rounded-lg shadow-md px-4 py-3 mb-5 text-base leading-6 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 transition duration-150 ease-in-out invalid:border-pink-500 invalid:text-pink-600
+                            focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+                                placeholder="Enter password"></br>
+
+                            <label for="dob" class="text-md w-40 inline-block font-medium leading-5 text-gray-700">
+                                Date of Birth
+                            </label>
+                            <input required type="date" id="dob" name="dob" class="bg-gray-100 inline-block rounded-lg shadow-md px-4 py-3 mb-5 text-base leading-6 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 transition duration-150 ease-in-out invalid:border-pink-500 invalid:text-pink-600
+                            focus:invalid:border-pink-500 focus:invalid:ring-pink-500"></br>
+
+                            <label for="acceptTerms"
+                                class="text-md w-50 inline-block font-medium leading-5 text-gray-700">
+                                Accept Terms & Conditions
+                            </label>
+                            <input required type="checkbox" id="acceptTerms" name="acceptTerms"
+                                class="bg-gray-100 inline-block rounded-lg shadow-md px-4 py-3 mb-5 text-base leading-6 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 transition duration-150 ease-in-out"></br>
+
+                            <button type="submit"
+                                class="w-fit rounded-lg shadow-lg px-8 py-4 bg-green-500 text-white hover:bg-green-400 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="relative bg-white px-6 mt-5 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:rounded-lg sm:px-10">
+            <div class="mx-auto">
+                <h2 class="text-3xl text-center font-bold leading-tight">
+                    Entries
+                </h2>
+                <div class="divide-y divide-gray-300/50" id="user-entries">
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <script src="x.js"></script>
+
 </body>
 </html>
-
-
